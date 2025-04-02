@@ -1,0 +1,27 @@
+<div class="filter-sidebar">
+    <h4>Launch Date</h4>
+    <div class="button-group">
+      <button *ngFor="let year of years"
+              [class.selected]="selectedYear === year"
+              (click)="selectYear(year)">
+        {{ year }}
+      </button>
+    </div>
+  
+    <h4>Successful Launch</h4>
+    <div class="button-group">
+      <button [class.selected]="selectedLaunchSuccess === 'true'" (click)="selectLaunchSuccess('true')">true</button>
+      <button [class.selected]="selectedLaunchSuccess === 'false'" (click)="selectLaunchSuccess('false')">false</button>
+    </div>
+  
+    <h4>Successful Land</h4>
+    <div class="button-group">
+      <button [class.selected]="selectedLandSuccess === 'true'" (click)="selectLandSuccess('true')">true</button>
+      <button [class.selected]="selectedLandSuccess === 'false'" (click)="selectLandSuccess('false')">false</button>
+    </div>
+  
+    <div class="reset-section">
+      <button class="reset-button" (click)="resetAll()">Reset Filters</button>
+    </div>
+  </div>
+  

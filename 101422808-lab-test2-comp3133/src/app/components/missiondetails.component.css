@@ -1,0 +1,59 @@
+.details-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background-color: #f0f4f8;
+}
+  
+.details-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+  
+.mission-patch {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+  
+h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+  
+.subtext {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+  
+.section {
+    margin-bottom: 20px;
+}
+  
+.section h4 {
+    margin-bottom: 8px;
+    color: #333;
+}
+  
+.section p {
+    margin: 2px 0;
+}
+  
+.links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+  
+.links a:hover {
+    text-decoration: underline;
+}
+  

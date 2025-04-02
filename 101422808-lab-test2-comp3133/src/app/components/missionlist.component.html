@@ -1,0 +1,31 @@
+<div class="mission-container">
+    <div class="sidebar">
+        <app-missionfilter
+            (yearSelected)="filterByYear($event)"
+            (launchSuccessSelected)="filterByLaunch($event)"
+            (landSuccessSelected)="filterByLand($event)"
+            (resetFilters)="resetFilters()">
+        </app-missionfilter>
+    </div>
+
+    <div class="mission-grid">
+        <div class="mission-card" *ngFor="let mission of missions" (click)="viewDetails(mission.flight_number)">
+            <img class="mission-patch" [src]="mission.links.mission_patch_small" alt="Mission Patch" />
+
+            <h3>{{ mission.mission_name }} #{{ mission.flight_number }}</h3>
+
+            <p><strong>Mission Ids:</strong> {{ mission.mission_id && mission.mission_id.length > 0 ? mission.mission_id.join(', ') : '-' }}</p>
+            <p><strong>Launch Year:</strong> {{ mission.launch_year }}</p>
+            <p><strong>Successful Launch:</strong>
+            {{ mission.launch_success === true ? 'Yes' : mission.launch_success === false ? 'No' : 'No Data' }}
+            </p>
+            <p><strong>Successful Landing:</strong>
+            {{
+                mission.rocket?.first_stage?.cores?.[0]?.land_success === true ? 'Yes' :
+                mission.rocket?.first_stage?.cores?.[0]?.land_success === false ? 'No' :
+                'No Data'
+            }}
+            </p>
+        </div>
+    </div>
+</div>

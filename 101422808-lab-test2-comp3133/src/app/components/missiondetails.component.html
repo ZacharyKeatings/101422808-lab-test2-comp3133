@@ -1,0 +1,35 @@
+<div class="details-container" *ngIf="mission">
+    <div class="details-card">
+      <img class="mission-patch" [src]="mission.links.mission_patch_small" alt="Mission Patch" />
+  
+      <h2>{{ mission.mission_name }}</h2>
+      <p class="subtext">Launch Year: {{ mission.launch_year }}</p>
+  
+      <div class="section">
+        <h4>🚀 Rocket</h4>
+        <p><strong>Name:</strong> {{ mission.rocket.rocket_name }}</p>
+        <p><strong>Type:</strong> {{ mission.rocket.rocket_type }}</p>
+      </div>
+  
+      <div class="section">
+        <h4>📍 Launch Site</h4>
+        <p><strong>Name:</strong>
+          {{ mission.launch_site?.site_name_long || 'N/A' }} 
+        </p>
+      </div>
+  
+      <div class="section">
+        <h4>📄 Launch Details</h4>
+        <p>{{ mission.details || 'No details available.' }}</p>
+      </div>
+  
+      <div class="section links" *ngIf="mission.links.article_link || mission.links.wikipedia || mission.links.video_link">
+        <h4>🔗 External Links</h4>
+        <a *ngIf="mission.links.article_link" [href]="mission.links.article_link" target="_blank">Article</a>
+        <a *ngIf="mission.links.wikipedia" [href]="mission.links.wikipedia" target="_blank">Wikipedia</a>
+        <a *ngIf="mission.links.video_link" [href]="mission.links.video_link" target="_blank">Watch Video</a>
+      </div>
+      <button class="back-button" (click)="goBack()">← Back to Missions</button>
+    </div>
+  </div>
+  
